@@ -1,0 +1,36 @@
+body{
+    background-color: #FFF;
+    margin: 150px 20px;
+    padding: 150px;
+}
+div {
+    text-align: center;
+    background-color: #eee;
+    height: 100px;
+    width: 200px;
+}
+h1 {
+    font-size: 40px;
+}
+p {
+    font-size: 20px;
+}
+#fixed{
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+#relative{
+    position: relative;
+    margin: auto;
+    padding: auto;
+    width: auto;
+    height: 200px;
+}
+#absolute{
+    background-color: #999;
+    position: absolute;
+    left: 80%;
+    top: 100px;
+    width: 250px;
+}
