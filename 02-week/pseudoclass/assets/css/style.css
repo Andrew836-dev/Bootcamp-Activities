@@ -1,0 +1,26 @@
+a:hover {
+    background-color: black;
+    color: green;
+}
+a:active{
+    background-color: blue;
+    color: orange;
+}
+a:focus {
+    border-color: blue;
+    border-width: 3px;
+    border-style: dashed;
+}
+
+a:last-child {
+    border-color: orangered;
+    border-width: 10px;
+    border-style: double;
+}
+a::first-letter {
+    font-size: 60px;
+}
+a{
+    display: inline-block;
+    color: black;
+}
