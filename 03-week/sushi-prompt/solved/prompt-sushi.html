@@ -7,9 +7,16 @@
   <body>
 
     <script type="text/javascript">
-
+      var likeSushi = confirm("Do you like sushi?");
+      var whatSushi = prompt("What kind of sushi do you like?");
     // Write code here!
-
+      alert("The fact that you like sushi is " + likeSushi);
+      if (likeSushi){
+        alert("Your favourite type of sushi is " + whatSushi);
+      }
+      else {
+        alert(whatSushi + " isn't sushi!");
+      }
     </script>
 
   </body>
