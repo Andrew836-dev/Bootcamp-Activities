@@ -1,0 +1,6 @@
+three choices - array
+make a choice - prompt
+computer choice - random number
+compare choices - logical condition
+outcome - alert
+

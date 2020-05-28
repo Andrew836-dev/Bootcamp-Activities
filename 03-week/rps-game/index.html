@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        var rockPaperScissors = ["r", "p", "s"];
+        var wins = 0;
+        var losses = 0;
+        var wantsToPlay = true;
+
+        for (var games = 1; wantsToPlay; ) {
+
+            var playerChoice = prompt("Make your choice. (p for paper, r for rock, s for scissors).");
+
+            var computerChoice = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+            if (playerChoice == "r" || playerChoice == "s" || playerChoice == "p") {
+                if (computerChoice === playerChoice) {
+
+                    console.log(playerChoice + ' ' + computerChoice);
+                    alert("It's a tie! Score: " + games + " games. " + wins + " wins. " + losses + " losses.");
+
+                }
+                else if ((playerChoice === "r" && computerChoice === "s") || (playerChoice === "s" && computerChoice === "p") || (playerChoice === "p" && computerChoice === "r")) {
+
+                    console.log(playerChoice + ' ' + computerChoice);
+                    wins++;
+                    alert("You win! Score: " + games + " games. " + wins + " wins. " + losses + " losses.");
+
+                }
+                else {
+
+                    console.log(playerChoice + ' ' + computerChoice);
+                    losses++;
+                    alert("You lose! Score: " + games + " games. " + wins + " wins. " + losses + " losses.");
+
+                }
+                games++;
+            }
+            else {
+                alert("Please enter a valid choice!");
+            }
+            wantsToPlay = confirm("Another game?")
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
