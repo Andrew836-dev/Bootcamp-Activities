@@ -7,42 +7,81 @@
     <title>Document</title>
 
     <script type="text/javascript">
+        // declare variables  
         var rockPaperScissors = ["r", "p", "s"];
         var wins = 0;
         var losses = 0;
         var wantsToPlay = true;
 
-        for (var games = 1; wantsToPlay; ) {
+        // for loop used this way, it is almost the same as a while loop.
+        // keeps doing everything inside the curly brace for as long as wantsToPlay is true.
+        for (var games = 1; wantsToPlay;) {
 
+            // prompt the player to make a choice.
             var playerChoice = prompt("Make your choice. (p for paper, r for rock, s for scissors).");
 
+            // give the computer a random choice
+            // Math.random gives a decimal number from 0 to 1
+            // Math.floor rounds down
             var computerChoice = rockPaperScissors[Math.floor(Math.random() * rockPaperScissors.length)];
+            
+            // this first if checks if the player put in a usable answer
             if (playerChoice == "r" || playerChoice == "s" || playerChoice == "p") {
+                
+                // If the computer choice and player choice are the same, it's a tie!
                 if (computerChoice === playerChoice) {
 
+                    // console.log to show what the results were, to make sure we set it up properly
                     console.log(playerChoice + ' ' + computerChoice);
+
+                    // an alert to explain the result and show the score.
                     alert("It's a tie! Score: " + games + " games. " + wins + " wins. " + losses + " losses.");
 
                 }
-                else if ((playerChoice === "r" && computerChoice === "s") || (playerChoice === "s" && computerChoice === "p") || (playerChoice === "p" && computerChoice === "r")) {
 
+                // checks if the player has a winning combination.
+                // && means both parts must be true.
+                // || means one part must be true.
+                // the brackets separate each possible option
+
+                else if ((playerChoice === "r" && computerChoice === "s") || (playerChoice === "s" && computerChoice === "p") || (playerChoice === "p" && computerChoice === "r")) {
+                    
+                    // console.log to show what the results were, to make sure we set it up properly
                     console.log(playerChoice + ' ' + computerChoice);
+
+                    // adds 1 to wins
                     wins++;
+
+                    // an alert to explain the result and show the score.
                     alert("You win! Score: " + games + " games. " + wins + " wins. " + losses + " losses.");
 
                 }
+
+                // If we didn't tie, and we didn't win, then the only remaining option is a loss
                 else {
 
+                    // console.log to show what the results were, to make sure we set it up properly
                     console.log(playerChoice + ' ' + computerChoice);
+
+                    // adds 1 to losses
                     losses++;
+
+                    // an alert to explain the result and show the score.
                     alert("You lose! Score: " + games + " games. " + wins + " wins. " + losses + " losses.");
 
                 }
+
+                // adds 1 to games, after we finish checking the result
                 games++;
             }
+            // if the player typed in something we can't use, it will jump to here
             else {
+
+                // an alert to explain why the game didn't happen
                 alert("Please enter a valid choice!");
             }
+
+            // checks if another game is desired. 
             wantsToPlay = confirm("Another game?")
         }
 
@@ -51,7 +90,7 @@
 </head>
 
 <body>
-
+    
 </body>
 
 </html>
