@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        console.log(navigator.userAgent)
+        var Name = "Unknown OS";
+        if (navigator.userAgent.indexOf("Win") != -1) Name =
+            "Windows";
+        if (navigator.userAgent.indexOf("Mac") != -1) Name =
+            "MacOS";
+        alert("Welcome, " + Name + " user!")
+        // redirect( 0, 120);
+        getLocation();
+
+        function getLocation() {
+            // Make sure browser supports this feature
+            if (navigator.geolocation) {
+                // Provide our showPosition() function to getCurrentPosition
+                console.log(navigator.geolocation.getCurrentPosition);
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        // This will get called after getCurrentPosition()
+        function showPosition(position) {
+            // console.log(position)
+            // Grab coordinates from the given object
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            console.log("Your coordinates are Latitude: " + lat + " Longitude " + lon);
+            // Call our next function, passing on the coordinates
+            redirect(lat, lon);
+        }
+
+        function redirect(lat, lon) {
+            //redirects to appropriate website
+            if (lon > 138.6007) {
+                alert("Sending you east.");
+                window.location.href = "./east.html";
+            }
+            else {
+                alert("Sending you west.");
+                window.location.href = "./west.html";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
