@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var salad = {
+            type: "vegetable",
+            ingredients: ["lettuce", "cucumber", "mushroom", "tomato", "carrot"],
+            ingredientsList: function () {
+                console.log("It contains :");
+                for (var i = 0; i < salad.ingredients.length; i++) {
+                    console.log(salad.ingredients[i]);
+                }
+            },
+            isItHealthy: function () {
+                console.log("This salad is pretty healthy.")
+            },
+            isItDelicious: function () {
+                console.log("No, not at all.")
+            }
+
+
+        }
+        console.log("This is a " + salad.type + " salad.");
+        console.log("What's in it?");
+        salad.ingredientsList();
+        salad.isItHealthy();
+        console.log("Is it delicious?");
+        salad.isItDelicious();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
