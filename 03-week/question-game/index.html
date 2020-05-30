@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var score = 0;
+        var questionArray = [{ q: 'Is the sky up?', a: true },
+        { q: 'Dogs are not loyal at all.', a: false },
+        { q: 'Left is left', a: true },
+        { q: 'This is a program.', a: true },
+        { q: 'Javascript is super easy.', a: false }]
+        console.log(questionArray);
+        for (i in questionArray) {
+            let answer = confirm(questionArray[i].q);
+            if (answer == questionArray[i].a) {
+                alert("Correct!");
+                score++;
+            }
+            else {
+                alert("Sorry to say, the answer was " + questionArray[i].a);
+            }
+        }
+        alert("Your final score was " + score + " out of " + questionArray.length)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
