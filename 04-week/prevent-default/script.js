@@ -15,5 +15,5 @@ submitButton.addEventListener('click', function(event) {
     tipTotal = price*tipPercent;
     workingTotal = parseFloat(tipTotal) + parseFloat(price);
     tipOutput.textContent = tipTotal.toFixed(2);
-    newTotal.textContent = workingTotal;
+    newTotal.textContent = workingTotal.toFixed(2);
 })
