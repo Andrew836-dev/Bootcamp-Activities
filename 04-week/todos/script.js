@@ -7,6 +7,19 @@ var todos = ["Learn HTML", "Learn CSS", "Learn JavaScript"];
 
 renderTodos();
 
+document.addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+        event.preventDefault();
+        if (todoInput.value == "") {
+            return;
+        }
+        else {
+            todos.push(todoInput.value);
+            todoInput.value = "";
+            renderTodos();
+        }
+    }
+});
 
 function renderTodos() {
     todoList.innerHTML = "";
