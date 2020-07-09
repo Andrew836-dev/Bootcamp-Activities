@@ -22,8 +22,5 @@ console.log(originalArray);
 const tripledArray = originalArray.map(data => data * 3);
 console.log(tripledArray);
 
-const oddOrEven = originalArray.map(data => {
-  if (data%2 == 0) return "even";
-  else return "odd";
-});
+const oddOrEven = originalArray.map(data => (data % 2 === 0 ? "even" : "odd"));
 console.log(oddOrEven);
