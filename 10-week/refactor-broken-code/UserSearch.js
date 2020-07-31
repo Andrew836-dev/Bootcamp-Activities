@@ -5,10 +5,10 @@ var weather = require("weather-js");
 var UserSearch = function(name, location) {
   this.name = name;
   this.location = location;
-  this.date = Date.Now();
+  this.date = Date.now();
 
   this.getWeather = function() {
-    weather.search({ search: this.location, degreeType: "F" }, function(err, result) {
+    weather.find({ search: this.location, degreeType: "F" }, function(err, result) {
       if (err) {
         console.log(err);
       }
