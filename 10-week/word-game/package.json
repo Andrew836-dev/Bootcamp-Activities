@@ -1,0 +1,18 @@
+{
+  "name": "word-game",
+  "version": "1.0.0",
+  "description": "Game for guessing words, one letter at a time",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^7.3.2",
+    "jest": "^26.1.0"
+  }
+}
