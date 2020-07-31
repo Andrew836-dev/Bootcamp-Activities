@@ -6,7 +6,7 @@ class Word {
     }
 
     toString() {
-        return this.letterList.join('');
+        return this.letterList.join(' ');
     }
 
     guessLetter(guess) {
