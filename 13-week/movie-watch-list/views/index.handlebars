@@ -1,0 +1,51 @@
+<h1>These movies will be great!</h1>
+<ul>
+    {{#each movies}}
+    <li>{{id}}. {{movie}}</li>
+    <button data-movieid={{id}} class="delmovie">Finished watching movie.</button>
+    {{/each}}
+</ul>
+<form action="/movies" method="POST">
+    <textarea name="movie"></textarea>
+    <button type="submit">Add a movie</button>
+</form>
+<form id="updateMovie">
+    <select name="id">
+        {{#each movies}}
+        <option value="{{this.id}}">{{this.movie}}</option>
+        {{/each}}
+    </select>
+    <button type="submit">Update movie</button>
+    <textarea name="movie"></textarea>
+</form>
+<form id="deleteMovie">
+
+</form>
+
+<script type="text/javascript">
+    $("#updateMovie").on("submit", function (event) {
+        event.preventDefault();
+        let id = $("[name=id]").val();
+        let updatedMovie = { movie: $("#updateMovie [name=movie]").val() }
+        console.log(id, updatedMovie);
+        $.ajax("/movies/" + id, {
+            method: "PUT",
+            data: updatedMovie
+        }).then( function() {
+            console.log("updated id ", id);
+            location.reload();
+        });
+    });
+
+    $(".delmovie").on("click", function (event) {
+        event.preventDefault();
+        let id= $(this).data("movieid");
+
+        $.ajax("/movies/" + id, {
+            method: "DELETE"
+        }).then(function() {
+            console.log(id, "movie deleted");
+            location.reload();
+        });
+    });
+</script>
