@@ -13,8 +13,8 @@ const orm = {
             return console.table(data);
         })
     },
-    leftJoin: function (colToSelect, leftTable, rightTable, leftCondition, rightCondition) {
-        connection.query("SELECT ?? FROM ?? AS tOne LEFT JOIN ?? AS tTwo ON tOne.?? = tTwo.??", [colToSelect, leftTable, rightTable, leftCondition, rightCondition], function (err, data){
+    leftJoin: function (colsToSelect, leftTable, rightTable, leftCondition, rightCondition) {
+        connection.query("SELECT ?? FROM ?? AS tOne LEFT JOIN ?? AS tTwo ON tOne.?? = tTwo.??", [colsToSelect, leftTable, rightTable, leftCondition, rightCondition], function (err, data){
             if (err) return console.log(err);
             return console.table(data);
         })
