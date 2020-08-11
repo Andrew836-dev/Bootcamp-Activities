@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "abc121",
+    "database": "starwars",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "abc121",
+    "database": "starwars",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "abc121",
+    "database": "starwars",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
