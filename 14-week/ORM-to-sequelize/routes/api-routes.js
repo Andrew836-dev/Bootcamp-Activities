@@ -26,6 +26,11 @@ module.exports = function (app) {
   app.post("/api/todos", function (req, res) {
     db.Todo.create(req.body).then(results => {
       res.json(results);
+    }).catch(({ errors }) => {
+      errors.forEach(error => {
+        console.log(error.message);
+        res.status(400).end();
+      });
     });
   });
 
@@ -38,6 +43,11 @@ module.exports = function (app) {
       }
     }).then(results => {
       res.json(results)
+    }).catch(({ errors }) => {
+      errors.forEach(error => {
+        console.log(error.message);
+        res.status(500).end();
+      });
     });
   });
 
@@ -50,6 +60,12 @@ module.exports = function (app) {
       where: {
         id: req.body.id
       }
-    }).then(results => res.json(results));
+    }).then(results => res.json(results))
+      .catch(({ errors }) => {
+        errors.forEach(error => {
+          console.log(error.message);
+          res.status(400).end();
+        });
+      });
   });
 };
