@@ -9,22 +9,24 @@
 // (remember: connection.js -> orm.js -> route file)
 // var orm = require("../config/orm.js");
 
+const db = require("../models");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
 
   // GET route for getting all of the todos
   app.get("/api/todos", function(req, res) {
-    // orm.getTodos(function(results) {
-    //   res.json(results);
-    // });
+    db.Todo.findAll({}).then(function(results) {
+      res.json(results);
+    });
   });
 
   // POST route for saving a new todo. We can create a todo using the data on req.body
   app.post("/api/todos", function(req, res) {
-    // orm.addTodo(req.body, function(results) {
-    //   res.json(results);
-    // });
+    db.Todo.create(req.body).then(results => {
+      res.json(results);
+    });
   });
 
   // DELETE route for deleting todos. We can access the ID of the todo to delete in
