@@ -72,6 +72,7 @@
         }
     </style>
     <link rel="icon" href="/favicon.ico" type="image/x-icon">  
+    <link rel="manifest" href="manifest.webmanifest" type="manifest">
 </head>
 
 <body>
@@ -95,6 +96,15 @@
 
     <div id="results"></div>
     <script src="/app.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+          window.addEventListener("load", () => {
+            navigator.serviceWorker.register("service-worker.js").then(reg => {
+              console.log("We found your service worker file!", reg);
+            });
+          });
+        }
+      </script>
 </body>
 
 </html>
